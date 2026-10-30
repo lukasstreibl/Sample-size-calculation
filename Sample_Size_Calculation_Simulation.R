@@ -112,7 +112,7 @@ power_N <- function(n, hM, hR, hINT, dropout_p) {
 
 # Scenarios
 # If more than one set of assumptions is entered above the Power simulation 
-# beyond will loop over each scenarios separately.
+# beyond will loop over each scenario separately.
 # Sample size is only reproducible for the same set of assumptions
 sc <- expand.grid(
   HR_M = HR_M_vals,
