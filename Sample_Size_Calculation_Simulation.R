@@ -179,7 +179,7 @@ req <- do.call(
     function(x) {
       
       x <- x[order(x$N), ]
-      ok <- x[x$Power >= target_power, ]
+      ok <- x[x$Power >= target_power + sqrt(target_power*(1-target_power)/nsim), ]
       
       data.frame(
         HR_M = x$HR_M[1],
