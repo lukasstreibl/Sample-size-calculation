@@ -150,7 +150,7 @@ for (i in seq_len(nrow(sc))) {
     res_list[[k]] <- result
     k <- k + 1
     
-    # Stop if tested sample size has sufficient power 
+    # Stop if tested sample size has sufficient power (accounting also for Monte-Carlo error)
     if (!is.na(result$Power) &&
         result$Power >= target_power + sqrt(target_power*(1-target_power)/nsim)) {
       break
