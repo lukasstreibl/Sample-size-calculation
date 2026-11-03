@@ -31,7 +31,7 @@ HR_M_vals <- c(1)
 HR_DRM_vals <- c(1)
 dropout_p_vals <- c(.10)
 
-N_vals <- seq(440,459,1)
+N_vals <- seq(450,465,1)
 nsim <- 10000
 target_power <- .80
 
@@ -152,7 +152,7 @@ for (i in seq_len(nrow(sc))) {
     
     # Stop if tested sample size has sufficient power 
     if (!is.na(result$Power) &&
-        result$Power >= target_power) {
+        result$Power >= target_power + sqrt(target_power*(1-target_power)/nsim)) {
       break
     }
   }
